@@ -39,3 +39,43 @@ The pipeline follows the **Medallion Architecture (Bronze → Silver → Gold �
 
 
 ---
+
+## Installation
+
+Use the package manager pip to install uv
+
+```bash
+pip install uv
+```
+
+Install all needed library for this project
+
+```bash
+uv add -r requirements.txt
+```
+
+---
+
+## Command
+
+To run the project first run docker container
+
+```bash
+docker compose up -d
+```
+
+Next build dbt models
+
+```bash
+cd data_transformation
+dbt build
+```
+
+Finally run Dagster Webserver and access port 3000
+
+```bash
+cd orchestration
+dagster dev -f definitions.py
+```
+
+---
