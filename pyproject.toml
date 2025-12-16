@@ -1,0 +1,40 @@
+[project]
+name = "data-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "apache-airflow>=3.1.2",
+    "boto3>=1.40.69",
+    "bs4>=0.0.2",
+    "confluent>=0.3.2",
+    "dagster-dbt>=0.28.2",
+    "dagster-dlt>=0.28.2",
+    "dagster-webserver>=1.12.2",
+    "dbt-core>=1.10.13",
+    "dbt-duckdb>=1.10.0",
+    "dbt-postgres>=1.9.1",
+    "dlt[duckdb,postgres]>=1.18.2",
+    "expectation>=0.0.2",
+    "expectations>=1.0.1",
+    "great>=0.2.0",
+    "jupyter>=1.1.1",
+    "kafka-python>=2.2.15",
+    "matplotlib>=3.10.7",
+    "pandas>=2.3.3",
+    "polars>=1.35.1",
+    "psycopg2-binary>=2.9.11",
+    "pymongo>=4.15.3",
+    "pyspark==3.5.7",
+    "pytest>=9.0.0",
+    "requests>=2.32.5",
+    "seaborn>=0.13.2",
+    "sqlalchemy>=2.0.44",
+]
+
+[tool.uv.sources]
+data_extract_load = { path = "./data_extract_load" }
+
+[tool.dagster]
+module = "orchestration"

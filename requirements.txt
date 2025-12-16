@@ -1,0 +1,9 @@
+dlt
+dlt-postgres
+dagster
+dagster-dbt
+dagster-dlt
+dbt-core
+dbt-postgres
+dagster-webserver
+requests

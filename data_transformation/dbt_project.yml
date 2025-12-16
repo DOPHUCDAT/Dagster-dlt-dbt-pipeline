@@ -1,0 +1,43 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'anime_seasonal'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'anime_seasonal'
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["anime_seasonal/models"]
+analysis-paths: ["anime_seasonal/analyses"]
+test-paths: ["anime_seasonal/tests"]
+seed-paths: ["anime_seasonal/seeds"]
+macro-paths: ["anime_seasonal/macros"]
+snapshot-paths: ["anime_seasonal/snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model
+# files using the `{{ config(...) }}` macro.
+models:
+  anime_seasonal:
+    bronze:
+      +materialized: table
+    silver:
+      +materialized: table
+    gold:
+      +materialized: table
+    mart:
+      +materialized: view
+
+
+

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: ingest_layer
+    schema: bronze
+    tables:
+      - name: raw_anime
+        identifier: raw_anime
+        meta:
+          dagster:
+            asset_key: ["dlt_anime_source_raw_anime"]
