@@ -78,4 +78,6 @@ cd orchestration
 dagster dev -f definitions.py
 ```
 
+Visualization with Metabase on port [3005](http://localhost:3005)
+
 ---
